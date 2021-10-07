@@ -1,0 +1,1 @@
+SELECT t1.id, t1.username, t2.username from "USER" a left join "USER" b on t1.parent = t2.id order by t1.id ASC
