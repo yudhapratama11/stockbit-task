@@ -1,8 +1,8 @@
 //Datasource
-const MovieDatasource = require('./MovieDatasource');
+const MovieDatasource = require('./movieDatasource');
 
 const Datasource = () => ({
-    MovieDatasource : new MovieDatasource({moshubPGDB})
+    MovieDatasource : new MovieDatasource({})
 })
 
 module.exports = Datasource;
