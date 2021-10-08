@@ -8,12 +8,15 @@ class MovieDatasource {
     
     async search(param){
         try{
-            var asd = MovieModel.Responses("dada")
             const res = 
             await axios.get('http://www.omdbapi.com/', {
                 params: {
-                    apikey: '94e61a2e',
-                    s: param.search,
+                    apikey: param.apikey,
+                    s: param.s,
+                    type: param.type || "",
+                    y: param.year || "",
+                    r: param.r || "json",
+                    page: param.page || "1",
                 }
             })
             return res.data
@@ -28,10 +31,13 @@ class MovieDatasource {
             const res = 
             await axios.get('http://www.omdbapi.com/', {
                 params: {
-                    apikey: '94e61a2e',
-                    i: param.imdb || "",
-                    t: param.title || ""
-                
+                    apikey: param.apikey,
+                    i: param.i || "",
+                    t: param.t || "",
+                    type: param.type || "",
+                    y: param.y || "",
+                    r: param.r || "json",
+                    plot: param.plot || "short",
                 }
             })
             return res.data
