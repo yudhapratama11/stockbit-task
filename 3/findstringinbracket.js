@@ -4,7 +4,7 @@ function findFirstStringInBracketClean(str){
     let indexFirstBracketFound = str.indexOf("(");
     if (indexFirstBracketFound == -1) return '';
 
-    let wordsAfterFirstBracket = str.substr( indexFirstBracketFound );
+    let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
     let indexSecondBracketFound = wordsAfterFirstBracket.indexOf(")");
     
     if(indexSecondBracketFound == -1) return '';
