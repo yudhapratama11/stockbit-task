@@ -2,8 +2,8 @@ const axios = require('axios');
 const MovieModel = require('../models/MovieModel');
 
 class MovieDatasource {
-    constructor(db){
-        this.db = db
+    constructor(){
+        // this.db = db
     }
     
     async search(param){
