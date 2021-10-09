@@ -1,12 +1,10 @@
 const SQL = require('sequelize');
-const {HOST, DATABASE, USERNAME, PASSWORD} = require('./config')
 
-
-module.exports.moshubPG =()=>{
-  const sequelize = new SQL(DATABASE, USERNAME, PASSWORD, {
-    host: HOST,
+module.exports.movieDB =()=>{
+  const sequelize = new SQL(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    host: process.env.DB_HOST,
     port: 5432,
-    dialect: 'postgres',
+    dialect: 'mysql',
     dialectOptions: {
       useUTC: false, //for reading from database
       dateStrings: true,
@@ -18,12 +16,12 @@ module.exports.moshubPG =()=>{
       idle: 20000,
       acquire: 20000
       },
-  timezone: '+07:00'
-});
+    timezone: '+07:00'
+  });
     
   sequelize.authenticate()
   .then(function(err) {
-    console.log('PostGre Connection has been established successfully.');
+    console.log('MySQL connection has been established successfully.');
   })
   .catch(function (err) {
     console.log('Unable to connect to the database:', err);

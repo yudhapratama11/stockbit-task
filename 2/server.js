@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const {PORT} = require('./config/config')
+require('dotenv').config()
 
 //ROUTE FILE
 const movie = require('./routes/movieRoutes')
