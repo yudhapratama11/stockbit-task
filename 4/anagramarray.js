@@ -2,6 +2,7 @@ function anagramArray(arrs){
     let anagram = {}
     let resArray = []
 
+    // Looping at the array to store word using hashmap
     for(var arr in arrs){
         sortStr = sortString(arrs[arr])
         // console.log(anagram[sortStr])
@@ -9,6 +10,7 @@ function anagramArray(arrs){
         anagram[sortStr].push(arrs[arr])
     }
 
+    // Moving data that store at hashmap to new array
     for(data in anagram){
         // console.log(data)
         resArray.push(anagram[data])
@@ -20,8 +22,10 @@ function anagramArray(arrs){
 }
 
 function sortString(arr){
+    // Spliting words to array of char
     var words = arr.split("")
-    // console.log(words)
+    
+    // Using bubble sort
     for(let i = 0; i < words.length; i ++ ){
         for(let j = i + 1; j < words.length; j ++ ){
             if(words[i] > words[j]) {
@@ -31,7 +35,7 @@ function sortString(arr){
             }
         }
     }
-    // console.log("sortString", words.join(""))
+    
     return words.join("")
 }
 
