@@ -9,3 +9,5 @@ const movie = require('./routes/movieRoutes')
 app.use('/',movie)
 
 app.listen(process.env.PORT, ()=> console.log(`Server listening on PORT ${process.env.PORT}`))
+
+module.exports = app;

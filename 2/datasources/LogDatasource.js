@@ -10,7 +10,7 @@ class MovieDatasource {
     async createLog(endpoint, param){
         try{
             const sql = `INSERT INTO log (datetime, endpoint, parameters) VALUES (now(), $endpoint, $parameters)`
-            const [s, r, m] = await Func.DoQuery(this.db, sql, { endpoint: endpoint, parameters: param})
+            return await Func.DoQuery(this.db, sql, { endpoint: endpoint, parameters: param})
         } catch(err) {
             return "Internal Server Error"
         }

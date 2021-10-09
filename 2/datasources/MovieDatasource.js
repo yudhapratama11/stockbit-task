@@ -2,9 +2,7 @@ const axios = require('axios');
 const MovieModel = require('../models/MovieModel');
 
 class MovieDatasource {
-    constructor(){
-        // this.db = db
-    }
+    constructor(){}
     
     async search(param){
         try{
@@ -21,7 +19,6 @@ class MovieDatasource {
             })
             return res.data
         } catch(err) {
-            // console.log(err)
             return "Internal Server Error"
         }
     }
