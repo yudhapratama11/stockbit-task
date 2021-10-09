@@ -35,6 +35,11 @@ npm install
 npm run test
 ```
 
+Package used:
+```
+axios, dotenv, express, mysql2, sequelize, chai, & mocha
+```
+
 ## Task 3
 From the task given for task number 3, my solution is to remove chaining if-else by using single if and returning empty if the the index is not found.
 
