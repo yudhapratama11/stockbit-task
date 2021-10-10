@@ -35,6 +35,13 @@ npm install
 npm run test
 ```
 
+API Endpoints:
+```
+GET http://localhost:3000/detail?apikey={yourapikey}&i={movieimdb} // get detail movie by imdb
+GET http://localhost:3000/detail?apikey={yourapikey}&t={movietitle} // get detail movie by title
+GET http://localhost:3000/search?apikey={yourapikey}&s={movie title} // searching movie
+```
+
 Package used:
 ```
 axios, dotenv, express, mysql2, sequelize, chai, & mocha
